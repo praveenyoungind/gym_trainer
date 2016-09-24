@@ -9,7 +9,7 @@
 <body>
 <h1>Welcome to Gym Training App </h1>
 <% if user_signed_in? %>
-	<p><%= current_user.email %></p>
+	<p><%= current_user.email %> <a href="<%= destroy_user_session_path %>" data-method="delete">Logout</a></p>
 <% else %>
 	<%= link_to "Log in", new_user_session_path %><br />
 <% end %>
