@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GymTraining</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<h1>Welcome to Gym Training App </h1>
+<% if user_signed_in? %>
+	<p><%= current_user.email %></p>
+<% else %>
+	<%= link_to "Log in", new_user_session_path %><br />
+<% end %>
+<%= yield %>
+
+</body>
+</html>
